@@ -418,10 +418,37 @@ create table if not exists public.student_uploads (
                  check (status in ('pending', 'approved', 'rejected')),
   created_at     timestamptz not null default now()
 );
--- ============================================================================
+-- ----------------------------------------------------------------------------
+-- 1.6 student_uploads
+-- Student files wait here for admin approval.
+-- ----------------------------------------------------------------------------
+create table if not exists public.student_uploads (
+  id             uuid primary key default gen_random_uuid(),
+  assignment_id  uuid not null references public.assignments(id) on delete cascade,
+  uploaded_by    uuid not null references auth.users(id) on delete cascade,
+  file_name      text not null,
+  storage_path   text not null unique,
+  status         text not null default 'pending'
+                 check (status in ('pending', 'approved', 'rejected')),
+  created_at     timestamptz not null default now()
+);
+create index if not exists idx_student_uploads_assignment
+  on public.student_uploads(assignment_id);
+
+create index if not exists idx_student_uploads_uploaded_by
+  on public.student_uploads(uploaded_by);
+
+create index if not exists idx_student_uploads_status
+  on public.student_uploads(status);
+
+create index if not exists idx_student_uploads_storage_path
+  on public.student_uploads(storage_path);
+alter table public.student_uploads enable row level security;
+-- ======
+======================================================================
 -- 7. CREATING THE FIRST ADMINISTRATOR
 -- ============================================================================
--- There is NO signup flow, button, or API call that can create an admin.
+-- There is NO signup flowalter table public.student_uploads enable row level security;, button, or API call that can create an admin.
 -- To bootstrap your first admin account:
 --
 --   1. Register a normal account through your app's register.html
