@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment Repository</title>
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+<script type="module">
+  import { supabase } from "./js/supabase.js";
+  import { checkIsAdmin, getAccessStatus } from "./js/access.js";
+
+  (async () => {
+    const { data } = await supabase.auth.getSession();
+    if (!data.session) { window.location.href = "login.html"; return; }
+    const isAdmin = await checkIsAdmin(data.session.user.id);
+    if (isAdmin) { window.location.href = "admin/index.html"; return; }
+    const status = await getAccessStatus(data.session.user.id);
+    if (status === "approved") window.location.href = "dashboard.html";
+    else if (status === "pending") window.location.href = "pending.html";
+    else window.location.href = "login.html";
+  })();
+</script>
+</body>
+</html>

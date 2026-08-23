@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Assignment Repository</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-brand"><span class="mark">AR</span><span>Assignment Repository</span></div>
+      <div class="card">
+        <h1>Sign in</h1>
+        <p class="subtitle">Access your subjects and assignments</p>
+
+        <div id="login-status-banner" class="form-error-banner hidden"></div>
+        <div id="login-error" class="form-error-banner hidden"></div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+      </div>
+      <p class="auth-footer">Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initLoginPage } from "./js/auth.js";
+    initLoginPage();
+  </script>
+</body>
+</html>
