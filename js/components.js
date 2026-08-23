@@ -170,7 +170,7 @@ const ADMIN_NAV_GROUPS = [
     links: [
       { href: "subjects.html", label: "Subjects" },
       { href: "assignments.html", label: "Assignments" },
-       { href: "submissions.html", label: "Student Submissions" },
+      { href: "student-submissions.html", label: "Student Submissions" },
     ],
   },
   {
