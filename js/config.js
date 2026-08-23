@@ -12,6 +12,8 @@ export const SUPABASE_ANON_KEY = "sb_publishable_XMdedAZAF_-bmasuBSPyig_Uc2cY_mZ
 // you also change it in schema.sql.
 export const STORAGE_BUCKET = "assignments";
 
+export const STUDENT_SUBMISSIONS_BUCKET = "student-submissions";
+
 // File upload restrictions (Section 17/18 of the spec). Edit freely.
 export const ALLOWED_FILE_EXTENSIONS = [
   "pdf", "doc", "docx", "ppt", "pptx", "zip", "txt", "c", "cpp", "py", "java"
