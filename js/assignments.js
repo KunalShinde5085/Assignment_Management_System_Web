@@ -10,6 +10,8 @@ import { requireApproved, attachLogoutHandler } from "./access.js";
 import {
   STORAGE_BUCKET,
   STUDENT_SUBMISSIONS_BUCKET,
+  ALLOWED_FILE_EXTENSIONS,
+  MAX_FILE_SIZE_BYTES,
 } from "./config.js";
 
 import {
