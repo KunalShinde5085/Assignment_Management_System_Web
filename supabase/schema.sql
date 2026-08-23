@@ -404,7 +404,20 @@ create table if not exists public.files (
   created_at     timestamptz not null default now()
 );
 
-
+-- ----------------------------------------------------------------------------
+-- 1.6 student_uploads
+-- Student files wait here for admin approval.
+-- ----------------------------------------------------------------------------
+create table if not exists public.student_uploads (
+  id             uuid primary key default gen_random_uuid(),
+  assignment_id  uuid not null references public.assignments(id) on delete cascade,
+  uploaded_by    uuid not null references auth.users(id) on delete cascade,
+  file_name      text not null,
+  storage_path   text not null unique,
+  status         text not null default 'pending'
+                 check (status in ('pending', 'approved', 'rejected')),
+  created_at     timestamptz not null default now()
+);
 -- ============================================================================
 -- 7. CREATING THE FIRST ADMINISTRATOR
 -- ============================================================================
