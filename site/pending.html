@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pending Approval — Assignment Repository</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-brand"><span class="mark">AR</span><span>Assignment Repository</span></div>
+      <div class="card pending-card">
+        <div class="pending-icon">⏳</div>
+        <h1>Awaiting approval</h1>
+        <p>Your account has been registered successfully. Please wait for administrator approval before you can access the repository.</p>
+        <button class="btn btn-secondary" id="refresh-btn">Check Again</button>
+      </div>
+      <p class="auth-footer"><a href="#" id="logout-link">Sign out</a></p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initPendingPage } from "./js/auth.js";
+    import { attachLogoutHandler } from "./js/access.js";
+    attachLogoutHandler();
+    initPendingPage();
+    document.getElementById("refresh-btn").addEventListener("click", () => window.location.reload());
+  </script>
+</body>
+</html>

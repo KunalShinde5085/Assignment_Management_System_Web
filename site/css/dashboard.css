@@ -1,0 +1,75 @@
+/* ============================================================================
+   DASHBOARD / SUBJECTS / ASSIGNMENT — student-facing content pages
+   ============================================================================ */
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+.subject-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius); padding: 16px 18px;
+  transition: box-shadow .12s ease, transform .12s ease;
+  display: block; color: var(--color-text);
+}
+.subject-card:hover { box-shadow: var(--shadow-md); text-decoration: none; transform: translateY(-1px); }
+.subject-card .code { font-size: 0.72rem; font-weight: 700; letter-spacing: .05em; color: var(--color-primary); text-transform: uppercase; }
+.subject-card h3 { margin: 4px 0 6px; }
+.subject-card p { font-size: 0.85rem; margin: 0; }
+
+.section-block { margin-bottom: 34px; }
+.section-block .section-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.section-block .section-title h2 { margin: 0; }
+
+.assignment-list { display: flex; flex-direction: column; gap: 10px; }
+.assignment-row {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius); padding: 13px 16px;
+  color: var(--color-text);
+}
+.assignment-row:hover { text-decoration: none; border-color: var(--color-border-strong); }
+.assignment-row .exp-tag {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+  background: var(--color-primary-tint); color: var(--color-primary);
+  width: 44px; height: 44px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.assignment-row .info { flex: 1; min-width: 0; }
+.assignment-row .info h3 { margin: 0 0 2px; font-size: 1rem; }
+.assignment-row .info p { margin: 0; font-size: 0.83rem; }
+.assignment-row .chev { color: var(--color-text-faint); }
+
+.stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px; margin-bottom: 28px;
+}
+.stat-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px 18px; }
+.stat-card .value { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; }
+.stat-card .label { font-size: 0.8rem; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: .03em; }
+
+.file-list { display: flex; flex-direction: column; gap: 10px; }
+.file-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius); padding: 13px 16px; flex-wrap: wrap;
+}
+.file-row .file-icon {
+  width: 38px; height: 38px; border-radius: var(--radius-sm);
+  background: var(--color-surface-sunk); color: var(--color-text-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; flex-shrink: 0;
+}
+.file-row .info { flex: 1; min-width: 160px; }
+.file-row .info .name { font-weight: 600; font-size: 0.92rem; }
+.file-row .info .meta { font-size: 0.78rem; color: var(--color-text-faint); }
+.file-row .actions { display: flex; gap: 8px; }
+
+.search-bar { position: relative; max-width: 320px; }
+.search-bar input { padding-left: 34px; }
+.search-bar .icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--color-text-faint); font-size: 0.9rem; }
+
+.assignment-detail-header { margin-bottom: 24px; }
+.assignment-detail-header .exp-eyebrow { font-size: 0.78rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }

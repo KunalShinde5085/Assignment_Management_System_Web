@@ -1,0 +1,38 @@
+/* ============================================================================
+   AUTH PAGES — login, register, pending
+   ============================================================================ */
+.auth-shell {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #EEF1F8 0%, transparent 60%),
+    var(--color-bg);
+}
+.auth-card { width: 100%; max-width: 380px; }
+.auth-brand {
+  display: flex; align-items: center; gap: 10px; justify-content: center;
+  margin-bottom: 26px;
+}
+.auth-brand .mark {
+  width: 34px; height: 34px; border-radius: var(--radius-sm);
+  background: var(--color-primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700;
+}
+.auth-brand span { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+
+.auth-card .card { padding: 28px; }
+.auth-card h1 { font-size: 1.3rem; margin-bottom: 4px; }
+.auth-card .subtitle { font-size: 0.88rem; margin-bottom: 22px; }
+.auth-footer { text-align: center; margin-top: 18px; font-size: 0.86rem; color: var(--color-text-muted); }
+
+.pending-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--color-pending-tint); color: var(--color-pending);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin: 0 auto 18px;
+}
+.pending-card { text-align: center; padding: 34px 28px; }
+.pending-card h1 { font-size: 1.25rem; }
+.status-message-card { text-align: center; padding: 34px 28px; }

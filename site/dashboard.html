@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Assignment Repository</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div id="app-nav"></div>
+
+  <main class="app-main">
+    <div class="page-header">
+      <div>
+        <h1>Welcome back</h1>
+        <p class="subtitle" id="welcome-email"></p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">
+        <h2>Subjects</h2>
+        <a href="subjects.html">View all</a>
+      </div>
+      <div id="dashboard-subjects"></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title"><h2>Recent Assignments</h2></div>
+      <div id="dashboard-recent"></div>
+    </div>
+  </main>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

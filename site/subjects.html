@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subjects — Assignment Repository</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div id="app-nav"></div>
+
+  <main class="app-main">
+    <div id="subject-list-view">
+      <div class="page-header">
+        <div><h1>Subjects</h1><p class="subtitle">Browse subjects and their assignments</p></div>
+      </div>
+      <div class="toolbar">
+        <div class="search-bar"><span class="icon">⌕</span><input type="text" id="subject-search" placeholder="Search subjects..."></div>
+      </div>
+      <div id="subjects-grid"></div>
+    </div>
+
+    <div id="subject-detail-view" class="hidden"></div>
+  </main>
+
+  <script type="module" src="js/subjects.js"></script>
+</body>
+</html>
