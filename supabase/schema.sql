@@ -394,6 +394,15 @@ drop policy if exists "storage_assignments_delete_admin_only" on storage.objects
 create policy "storage_assignments_delete_admin_only"
   on storage.objects for delete
   using (bucket_id = 'assignments' and public.is_admin());
+create table if not exists public.files (
+  id             uuid primary key default gen_random_uuid(),
+  assignment_id  uuid not null references public.assignments(id) on delete cascade,
+  file_name      text not null,
+  storage_path   text not null unique,
+  file_type      text,
+  file_size      bigint,
+  created_at     timestamptz not null default now()
+);
 
 
 -- ============================================================================
